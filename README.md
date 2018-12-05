@@ -1,2 +1,2 @@
 # memo_aws_cli
-これは自分用awscliメモです。（wiki参照）
+awscliメモです。(wiki.md参照）
