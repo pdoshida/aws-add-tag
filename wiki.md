@@ -29,6 +29,6 @@ aws ec2 create-tags --resources ${INSTANCE_ID} --tag Key=Name,Value=${NAME}
 ### iam
 ```
 # user delete
-aws iam delete-login-profile --user-name shigyo --profile faspa
+aws iam delete-login-profile --user-name shigyo --profile ${faspa}
 
 ```
