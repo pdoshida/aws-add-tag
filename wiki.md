@@ -25,6 +25,10 @@ aws ec2 describe-instances \
 
 # ec2 create tag
 aws ec2 create-tags --resources ${INSTANCE_ID} --tag Key=Name,Value=${NAME}
-
+```
+### iam
+```
+# user delete
+aws iam delete-login-profile --user-name shigyo --profile faspa
 
 ```
