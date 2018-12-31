@@ -1,22 +1,23 @@
 #/bin/bash
 # ==============================
 # Usage
-#  ./create-tag-inspector.sh <profile>
+#  ./create-tag-inspector.sh <profile> <key> <val> <grepkey>
 #  引数にaws configureでつけたprofile名を記載して実行
+#
 # 例：
-#  ./create-tag-inspector.sh xxx
-#  ./create-tag-inspector.sh yyy
+#  ./add-tag.sh lab Inspector True stg
+#  ./add-tag.sh test Backup True prd
 #
 # もくろみ：
 #  tagにstgがつくインスタンスにinspector用のカスタムタグを追加したかった
-#===============================
-
-grepkey="stg"
+# ===============================
 
 profile=$1
-list="stg-instanceid.list"
-key="inspector"
-val="True"
+key=$2
+val=$3
+grepkey=$4
+
+list="tmp.list"
 
 
 aws ec2 describe-instances \
@@ -30,5 +31,7 @@ do
 	echo ${INSTANCE_ID}
 	aws ec2 create-tags --tag Key=${key},Value=${val} --profile ${profile} --resources ${INSTANCE_ID}
 done
+
+rm ${list}
 
 exit 0
