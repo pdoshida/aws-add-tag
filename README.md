@@ -1,4 +1,6 @@
 
+ec2にタグ付与（前提：すでになんらかのNameタグがあること）
+
 ```
  Usage
   ./create-tag-inspector.sh <profile> <key> <val> <grepkey>
